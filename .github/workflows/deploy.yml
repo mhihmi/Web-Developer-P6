@@ -34,14 +34,14 @@ jobs:
       - name: Configure SSH
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          VPS_SERVER: ${{ secrets.VPS_SERVER }}
+          VPS_HOSTNAME: ${{ secrets.VPS_HOSTNAME }}
           VPS_USER: ${{ secrets.VPS_USER }}
           SSH_PORT: ${{ secrets.SSH_PORT }}
         run: |
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -p $SSH_PORT -H $VPS_SERVER >> ~/.ssh/known_hosts
+          ssh-keyscan -p $SSH_PORT -H $VPS_HOSTNAME >> ~/.ssh/known_hosts
 
       - name: Configure SSH for cloudflared
         env:
