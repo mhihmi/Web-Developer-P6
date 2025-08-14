@@ -3,9 +3,7 @@ name: Deploy-to-Production
 on:
   push:
     branches:
-      - master
-    paths:
-      - '.github/workflows/deploy.yml'  
+      - master  
 
 jobs:
   deploy:
