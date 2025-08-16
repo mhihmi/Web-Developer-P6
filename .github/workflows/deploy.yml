@@ -23,7 +23,7 @@ jobs:
         run: npm install
 
       - name: Build Angular app
-        run: ng build --configuration production --base-href=/hottakes/
+        run: npx ng build --configuration production --base-href=/hottakes/
 
       - name: Install cloudflared
         run: |
